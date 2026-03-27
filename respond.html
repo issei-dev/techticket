@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>対応・回答 | 社内ヘルプデスク</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">
+    <span class="icon">🎫</span> 社内ヘルプデスク
+  </div>
+  <div class="navbar-links">
+    <a href="index.html">チケット作成</a>
+    <a href="respond.html" class="active">対応・回答</a>
+    <a href="history.html">履歴</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- フィルタ -->
+  <div class="filter-bar">
+    <select id="filterStatus">
+      <option value="">ステータス: すべて</option>
+      <option value="open" selected>未対応</option>
+      <option value="progress">進行中</option>
+      <option value="closed">解決</option>
+      <option value="rejected">却下</option>
+    </select>
+    <select id="filterCategory">
+      <option value="">カテゴリ: すべて</option>
+    </select>
+    <select id="filterPriority">
+      <option value="">優先度: すべて</option>
+    </select>
+    <input type="text" id="filterKeyword" placeholder="🔍 キーワード検索" />
+  </div>
+
+  <!-- チケット一覧 -->
+  <div class="ticket-list" id="ticketList"></div>
+</div>
+
+<!-- 詳細モーダル -->
+<div class="modal-overlay" id="detailModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modalTitle">チケット詳細</h3>
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/respond.js"></script>
+</body>
+</html>
