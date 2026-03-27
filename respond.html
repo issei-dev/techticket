@@ -21,11 +21,18 @@
 
 <div class="container">
 
-  <!-- フィルタ -->
+  <!-- デバッグ情報 -->
+  <div class="debug-bar" id="debugBar">
+    💡 保存チケット数: <strong id="debugCount">0</strong>
+    <button class="btn btn-outline btn-sm" onclick="refreshDebug()">更新</button>
+    <button class="btn btn-outline btn-sm" onclick="insertSample()">サンプル投入</button>
+  </div>
+
+  <!-- フィルタ（初期値をすべてに変更） -->
   <div class="filter-bar">
     <select id="filterStatus">
-      <option value="">ステータス: すべて</option>
-      <option value="open" selected>未対応</option>
+      <option value="" selected>ステータス: すべて</option>
+      <option value="open">未対応</option>
       <option value="progress">進行中</option>
       <option value="closed">解決</option>
       <option value="rejected">却下</option>
