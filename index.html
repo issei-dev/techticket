@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>チケット作成 | 社内ヘルプデスク</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ナビゲーション -->
+<nav class="navbar">
+  <div class="navbar-brand">
+    <span class="icon">🎫</span> 社内ヘルプデスク
+  </div>
+  <div class="navbar-links">
+    <a href="index.html" class="active">チケット作成</a>
+    <a href="respond.html">対応・回答</a>
+    <a href="history.html">履歴</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">📝 新規チケットを作成</div>
+    <div class="card-body">
+      <form id="ticketForm">
+
+        <!-- 投稿者 -->
+        <div class="form-group">
+          <label>投稿者 <span class="req">*</span></label>
+          <div class="user-selector">
+            <img class="selected-avatar" id="requesterAvatar" src="" onerror="avatarFallback(this)" />
+            <select class="form-control" id="requesterId" required></select>
+          </div>
+        </div>
+
+        <!-- カテゴリ -->
+        <div class="form-group">
+          <label>カテゴリ <span class="req">*</span></label>
+          <select class="form-control" id="category" required>
+            <option value="">選択してください</option>
+          </select>
+        </div>
+
+        <!-- 優先度 -->
+        <div class="form-group">
+          <label>優先度 <span class="req">*</span></label>
+          <select class="form-control" id="priority" required>
+            <option value="">選択してください</option>
+          </select>
+        </div>
+
+        <!-- 発生日 -->
+        <div class="form-group">
+          <label>発生日 <span class="req">*</span></label>
+          <input type="date" class="form-control" id="occurredDate" required />
+        </div>
+
+        <!-- タイトル -->
+        <div class="form-group">
+          <label>件名 <span class="req">*</span></label>
+          <input type="text" class="form-control" id="title" placeholder="簡潔にお困りごとの概要を記入" required />
+        </div>
+
+        <!-- 詳細 -->
+        <div class="form-group">
+          <label>お困りごとの詳細 <span class="req">*</span></label>
+          <textarea class="form-control" id="description" rows="5" placeholder="発生状況や再現手順など、詳しく記載してください" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">🚀 チケットを送信</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
