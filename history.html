@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>履歴 | 社内ヘルプデスク</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">
+    <span class="icon">🎫</span> 社内ヘルプデスク
+  </div>
+  <div class="navbar-links">
+    <a href="index.html">チケット作成</a>
+    <a href="respond.html">対応・回答</a>
+    <a href="history.html" class="active">履歴</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- 統計 -->
+  <div class="stats-row" id="statsRow"></div>
+
+  <!-- フィルタ -->
+  <div class="filter-bar">
+    <select id="hFilterStatus">
+      <option value="">ステータス: すべて</option>
+    </select>
+    <select id="hFilterCategory">
+      <option value="">カテゴリ: すべて</option>
+    </select>
+    <select id="hFilterRequester">
+      <option value="">投稿者: すべて</option>
+    </select>
+    <input type="text" id="hFilterKeyword" placeholder="🔍 キーワード検索" />
+  </div>
+
+  <!-- 一覧 -->
+  <div class="ticket-list" id="historyList"></div>
+</div>
+
+<!-- 詳細モーダル（読み取り専用） -->
+<div class="modal-overlay" id="historyModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="hModalTitle">チケット詳細</h3>
+      <button class="modal-close" onclick="closeHistoryModal()">&times;</button>
+    </div>
+    <div class="modal-body" id="hModalBody"></div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/history.js"></script>
+</body>
+</html>
